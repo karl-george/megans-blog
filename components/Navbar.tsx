@@ -1,6 +1,6 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 
 interface NavbarProps {}
@@ -14,7 +14,8 @@ function Navbar({}: NavbarProps) {
     <div>
       <Link href='/'>Home - </Link>
       {status}
-      <Link href='/sign-in'> - Sign-In</Link>
+      <div onClick={() => signIn('google')}> - Sign-In</div>
+      <div onClick={() => signOut()}> - Sign-Out</div>
     </div>
   );
 }
