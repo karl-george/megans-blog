@@ -1,10 +1,11 @@
 import prisma from '@/utils/connect';
+import { NextApiRequest } from 'next';
 import { NextResponse } from 'next/server';
 
-export const GET = async (req) => {
-  const { searchParams } = new URL(req.url);
+export const GET = async (req: NextApiRequest) => {
+  const { searchParams } = new URL(req.url || '');
 
-  const page = searchParams.get('page');
+  const page = parseInt(searchParams.get('page') || '');
   const cat = searchParams.get('cat');
 
   const POST_PER_PAGE = 2;
