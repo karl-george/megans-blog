@@ -1,5 +1,6 @@
 import { fetchCategories } from '@/utils/fetchCategories';
 import { Category } from '@prisma/client';
+import Link from 'next/link';
 
 interface CategoryListProps {}
 
@@ -9,7 +10,9 @@ async function CategoryList({}: CategoryListProps) {
   return (
     <div>
       {categories?.map((category) => (
-        <div key={category.id}>{category.title}</div>
+        <Link href={`/blog?cat=${category.slug}`} key={category.id}>
+          {category.title}
+        </Link>
       ))}
     </div>
   );
