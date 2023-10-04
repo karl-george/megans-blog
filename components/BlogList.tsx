@@ -1,6 +1,7 @@
 import { fetchPosts } from '@/utils/fetchPosts';
 import { Post } from '@prisma/client';
 import Pagination from './Pagination';
+import Link from 'next/link';
 
 interface BlogListProps {
   page: number;
@@ -21,7 +22,9 @@ async function BlogList({ page, cat }: BlogListProps) {
   return (
     <div>
       {posts?.map((post) => (
-        <div key={post.id}>{post.title}</div>
+        <Link href={`/posts/${post.slug}`} key={post.id}>
+          {post.title}
+        </Link>
       ))}
       <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} />
     </div>
