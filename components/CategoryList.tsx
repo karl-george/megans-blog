@@ -1,5 +1,5 @@
-import { Category } from '@/types';
 import { fetchCategories } from '@/utils/fetchCategories';
+import { Category } from '@prisma/client';
 
 interface CategoryListProps {}
 
