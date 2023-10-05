@@ -23,7 +23,7 @@ function Navbar({}: NavbarProps) {
           </Link>
         </li>
         <li>
-          <Link href='/' className='text-[64px] allura'>
+          <Link href='/' className='text-[64px] allura text-primary'>
             Megan
           </Link>
         </li>
