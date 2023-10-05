@@ -17,7 +17,7 @@ function MobileMenu({ status }: MobileMenuProps) {
     <div className='lg:hidden'>
       <Sheet>
         <SheetTrigger>
-          <Menu className='lg:hidden' size={32} />
+          <Menu className='lg:hidden' size={26} />
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
