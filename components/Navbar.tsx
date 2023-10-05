@@ -1,22 +1,47 @@
-'use client';
-
-import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
+import AuthLinks from './AuthLinks';
 
 interface NavbarProps {}
 
-//! TODO: Refactor the client side away from navbar
-
 function Navbar({}: NavbarProps) {
-  const { status } = useSession();
-
   return (
-    <div>
-      <Link href='/'>Home - </Link>
-      {status}
-      <div onClick={() => signIn('google')}> - Sign-In</div>
-      <div onClick={() => signOut()}> - Sign-Out</div>
-    </div>
+    <nav className='container py-8'>
+      <ul className='flex items-center justify-between   text-xl'>
+        <li>
+          <Link href='/blog?cat=travel' className='max-lg:hidden lg:block'>
+            Travel
+          </Link>
+        </li>
+        <li>
+          <Link href='/blog?cat=food' className='max-lg:hidden lg:block'>
+            Food
+          </Link>
+        </li>
+        <li>
+          <Link href='/blog?cat=tech' className='max-lg:hidden lg:block'>
+            Tech
+          </Link>
+        </li>
+        <li>
+          <Link href='/' className='text-[64px] allura'>
+            Megan
+          </Link>
+        </li>
+        <li>
+          <Link href='/about' className='max-lg:hidden lg:block'>
+            About
+          </Link>
+        </li>
+        <li>
+          <Link href='/contact' className='max-lg:hidden lg:block'>
+            Contact
+          </Link>
+        </li>
+        <li>
+          <AuthLinks />
+        </li>
+      </ul>
+    </nav>
   );
 }
 
