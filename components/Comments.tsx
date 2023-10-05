@@ -5,6 +5,8 @@ interface CommentsProps {
   postSlug: string;
 }
 
+// TODO! Handle posting a new comment
+
 async function Comments({ postSlug }: CommentsProps) {
   const comments: Comment[] = await fetchComments(postSlug);
   return (
