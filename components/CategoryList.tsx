@@ -8,11 +8,11 @@ async function CategoryList({}: CategoryListProps) {
   const categories: Category[] = await fetchCategories();
 
   return (
-    <div className='container m-16 mx-auto'>
-      <h2 className='allura text-5xl md:text-7xl text-primary mb-12 text-center'>
+    <div className='container my-16'>
+      <h2 className='allura text-5xl md:text-7xl text-primary mb-8 text-center'>
         Browse the Categories
       </h2>
-      <div className='flex flex-col md:flex-row justify-between items-center'>
+      <div className='flex flex-col lg:flex-row gap-x-4 gap-y-8 justify-between '>
         {categories?.map((category) => (
           <CategoryCard category={category} key={category.id} />
         ))}
