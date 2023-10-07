@@ -22,7 +22,7 @@ async function BlogList({ page, cat }: BlogListProps) {
   return (
     <div className='container my-24'>
       <h2 className='allura text-5xl md:text-7xl text-primary mb-8 text-center'>
-        My lastest thoughts
+        My latest thoughts
       </h2>
       <div className='flex flex-col lg:flex-row gap-x-4 gap-y-8 justify-between '>
         {posts?.map((post) => (
