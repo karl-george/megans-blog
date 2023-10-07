@@ -1,5 +1,5 @@
-import { Post } from '@prisma/client';
 import Link from 'next/link';
+import { Post } from '@prisma/client';
 
 interface BlogCardProps {
   post: Post;
@@ -8,9 +8,7 @@ interface BlogCardProps {
 function BlogCard({ post }: BlogCardProps) {
   return (
     <div>
-      <Link href={`/posts/${post.slug}`} key={post.id}>
-        {post.title}
-      </Link>
+      <Link href={`/posts/${post.slug}`}>{post.title}</Link>
     </div>
   );
 }
