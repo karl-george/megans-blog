@@ -17,12 +17,12 @@ function Header({}: HeaderProps) {
             />
             <div className='absolute text-center'>
               <div className=' bg-white py-1 mb-4 lg:mb-8 px-4 mx-12'>
-                <h2 className='text-primary hero-text text-[40px] lg:text-8xl allura'>
+                <h2 className='text-primary hero-text text-[40px] md:text-[60px] lg:text-8xl allura'>
                   Hi, I'm Megan
                 </h2>
               </div>
               <div className=' bg-white py-1 px-4 lg:ml-24 lg:px-12'>
-                <h2 className='text-primary hero-text text-[40px] lg:text-8xl allura '>
+                <h2 className='text-primary hero-text text-[40px] md:text-[60px] lg:text-8xl allura '>
                   Welcome to my blog
                 </h2>
               </div>
@@ -33,5 +33,11 @@ function Header({}: HeaderProps) {
     </div>
   );
 }
+
+// TODO!
+// Try making out div flex and only setting text to middle
+// through itemscenter
+// Then set text to self start and image to self end
+// Then try playing with the left %s on text
 
 export default Header;
