@@ -8,7 +8,7 @@ async function CategoryList({}: CategoryListProps) {
   const categories: Category[] = await fetchCategories();
 
   return (
-    <div className='container my-24'>
+    <div className='mt-24'>
       <h2 className='allura text-5xl md:text-7xl text-primary mb-8 text-center'>
         Browse the Categories
       </h2>
