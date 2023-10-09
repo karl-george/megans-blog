@@ -8,7 +8,7 @@ export const GET = async (req: NextApiRequest) => {
   const page = parseInt(searchParams.get('page') || '');
   const cat = searchParams.get('cat');
 
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 6;
 
   const query = {
     take: POST_PER_PAGE,
