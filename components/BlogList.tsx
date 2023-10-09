@@ -14,7 +14,7 @@ async function BlogList({ page, cat }: BlogListProps) {
     cat || ''
   );
 
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 6;
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
@@ -24,12 +24,12 @@ async function BlogList({ page, cat }: BlogListProps) {
       <h2 className='allura text-5xl md:text-7xl text-primary mb-8 text-center'>
         My latest thoughts
       </h2>
-      <div className='flex flex-col lg:flex-row gap-x-4 gap-y-8 justify-between '>
+      <div className=''>
         {posts?.map((post) => (
           <BlogCard post={post} key={post.id} />
         ))}
       </div>
-      <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} />
+      {/* <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} /> */}
     </div>
   );
 }
