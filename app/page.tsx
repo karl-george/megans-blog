@@ -8,8 +8,10 @@ export default function Home({ searchParams }) {
   return (
     <main>
       <Header />
-      <CategoryList />
-      <BlogList page={page} />
+      <div className='container space-y-24'>
+        <CategoryList />
+        <BlogList page={page} />
+      </div>
     </main>
   );
 }
