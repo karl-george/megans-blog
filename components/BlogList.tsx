@@ -20,17 +20,17 @@ async function BlogList({ page, cat }: BlogListProps) {
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
 
   return (
-    <div className=''>
+    <main className=''>
       <h2 className='allura text-5xl md:text-7xl text-primary mb-8 text-center'>
         My latest thoughts
       </h2>
-      <div className='flex flex-col lg:flex-row w-full gap-x-4 gap-y-8 justify-between'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8'>
         {posts?.map((post) => (
           <BlogCard post={post} key={post.id} />
         ))}
       </div>
       {/* <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} /> */}
-    </div>
+    </main>
   );
 }
 
