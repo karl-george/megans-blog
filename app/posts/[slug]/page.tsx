@@ -19,7 +19,7 @@ async function page({ params }: pageProps) {
         )}
       </div>
       <div
-        className='max-w-6xl'
+        className='max-w-6xl text-lg'
         dangerouslySetInnerHTML={{ __html: post.desc }}
       />
       <Comments postSlug={slug} />
