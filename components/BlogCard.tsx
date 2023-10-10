@@ -22,7 +22,7 @@ function BlogCard({ post }: BlogCardProps) {
             />
           )}
         </div>
-        <div className='bg-secondary text-primary space-y-4 text-center py-4'>
+        <div className='bg-secondary text-primary space-y-4 text-center py-4 px-2 max-w-[400px]'>
           <p className='text-sm text-[#8F8F8F] '>
             {post.catSlug.toUpperCase()}
           </p>
