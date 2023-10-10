@@ -10,16 +10,22 @@ async function page({ params }: pageProps) {
   const post: Post = await fetchSinglePost(slug);
 
   return (
-    <div className='my-12 container flex flex-col justify-center items-center space-y-12 text-primary'>
-      <div className='-mb-6'>{post.catSlug.toUpperCase()}</div>
-      <div className='text-6xl'>{post.title}</div>
+    <div className='my-12 container flex flex-col justify-center items-center text-primary'>
+      <div className='mb-8'>{post.catSlug.toUpperCase()}</div>
+      <div className='text-6xl mb-12'>{post.title}</div>
       <div>
         {post.img && (
-          <Image src={post.img} width={300} height={300} alt={post.title} />
+          <Image
+            src={post.img}
+            width={300}
+            height={300}
+            alt={post.title}
+            className='mb-12'
+          />
         )}
       </div>
       <div
-        className='max-w-6xl text-lg'
+        className='max-w-6xl text-lg mb-28'
         dangerouslySetInnerHTML={{ __html: post.desc }}
       />
       <Comments postSlug={slug} />
@@ -28,3 +34,10 @@ async function page({ params }: pageProps) {
 }
 
 export default page;
+
+// !Todo:
+// Work on comments
+// Add Profile page
+// Look again at image sizes
+// Add About page
+// Add Contact page
