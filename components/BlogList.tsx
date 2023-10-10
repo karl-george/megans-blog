@@ -22,14 +22,14 @@ async function BlogList({ page, cat }: BlogListProps) {
   return (
     <main className=''>
       <h2 className='allura text-5xl md:text-7xl text-primary mb-8 text-center'>
-        My latest thoughts
+        {cat ? `My ${cat} thoughts` : `My latest thoughts`}
       </h2>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8'>
         {posts?.map((post) => (
           <BlogCard post={post} key={post.id} />
         ))}
       </div>
-      {/* <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} /> */}
+      <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} />
     </main>
   );
 }
