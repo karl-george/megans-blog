@@ -1,6 +1,6 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import MobileMenu from './MobileMenu';
 
@@ -16,9 +16,12 @@ function AuthLinks({}: AuthLinksProps) {
           Login
         </Link>
       ) : (
-        <Link href='/profile' className='max-lg:hidden lg:block'>
-          Profile
-        </Link>
+        <div
+          className='max-lg:hidden lg:block cursor-pointer'
+          onClick={() => signOut()}
+        >
+          Logout
+        </div>
       )}
       <MobileMenu status={status} />
     </>
