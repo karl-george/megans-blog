@@ -34,10 +34,3 @@ async function page({ params }: pageProps) {
 }
 
 export default page;
-
-// !Todo:
-// Work on comments
-// Add Profile page
-// Look again at image sizes
-// Add About page
-// Add Contact page
