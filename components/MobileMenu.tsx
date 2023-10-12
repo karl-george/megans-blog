@@ -7,6 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from './ui/sheet';
+import { signOut } from 'next-auth/react';
 
 interface MobileMenuProps {
   status: string;
@@ -45,7 +46,9 @@ function MobileMenu({ status }: MobileMenuProps) {
               {status === 'unauthenticated' ? (
                 <Link href='/sign-in'>Login</Link>
               ) : (
-                <Link href='/profile'>Profile</Link>
+                <div className='cursor-pointer' onClick={() => signOut()}>
+                  Logout
+                </div>
               )}
             </li>
           </ul>
