@@ -34,10 +34,4 @@ function Header({}: HeaderProps) {
   );
 }
 
-// TODO!
-// Try making out div flex and only setting text to middle
-// through itemscenter
-// Then set text to self start and image to self end
-// Then try playing with the left %s on text
-
 export default Header;
