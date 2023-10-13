@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Post } from '@prisma/client';
+import { formatDateString } from '@/utils/formatDateString';
 
 interface BlogCardProps {
   post: Post;
@@ -27,7 +28,9 @@ function BlogCard({ post }: BlogCardProps) {
             {post.catSlug.toUpperCase()}
           </p>
           <h3 className='text-3xl'>{post.title}</h3>
-          <p className='text-sm text-[#8F8F8F]'>Date</p>
+          <p className='text-sm text-[#8F8F8F]'>
+            {formatDateString(post.createdAt)}
+          </p>
         </div>
       </Link>
     </div>
