@@ -39,7 +39,7 @@ function Comments({ postSlug }: CommentsProps) {
 
   //!TODO: Update this url when deployed
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    `https://megans-blog.vercel.app/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 
