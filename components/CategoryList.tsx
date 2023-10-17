@@ -4,6 +4,8 @@ import CategoryCard from './CategoryCard';
 
 interface CategoryListProps {}
 
+export const revalidate = 0;
+
 async function CategoryList({}: CategoryListProps) {
   const categories: Category[] = await fetchCategories();
 
