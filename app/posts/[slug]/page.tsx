@@ -3,7 +3,11 @@ import { fetchSinglePost } from '@/utils/fetchSinglePost';
 import { Post } from '@prisma/client';
 import Image from 'next/image';
 
-interface pageProps {}
+export const revalidate = 0;
+
+interface pageProps {
+  params: { slug: string };
+}
 
 async function page({ params }: pageProps) {
   const { slug } = params;
@@ -16,8 +20,8 @@ async function page({ params }: pageProps) {
       <div>
         {post.img && (
           <Image
-            src={post.img}
-            width={300}
+            src={`${post.img}.jpg`}
+            width={800}
             height={300}
             alt={post.title}
             className='mb-12'
