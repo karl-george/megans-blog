@@ -1,5 +1,6 @@
 'use client';
 
+import { formatDateString } from '@/utils/formatDateString';
 import { Comment } from '@prisma/client';
 import Image from 'next/image';
 
@@ -22,7 +23,7 @@ function CommentCard({ comment }: CommentProps) {
         </div>
         <div className='flex flex-col gap-2'>
           <p className='font-bold'>{comment.user.name}</p>
-          <p className='text-sm'>{comment.createdAt}</p>
+          <p className='text-sm'>{formatDateString(comment.createdAt)}</p>
           <p className='text-lg'>{comment.desc}</p>
         </div>
       </div>
