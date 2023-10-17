@@ -1,9 +1,8 @@
 import { getAuthSession } from '@/utils/auth';
 import prisma from '@/utils/connect';
-import { NextApiRequest } from 'next';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export const GET = async (req: NextApiRequest) => {
+export const GET = async (req: NextRequest) => {
   const { searchParams } = new URL(req.url || '');
 
   const postSlug = searchParams.get('postSlug');
