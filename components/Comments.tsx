@@ -1,14 +1,23 @@
 'use client';
 
-import { Comment } from '@prisma/client';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 import useSWR from 'swr';
 import CommentCard from './CommentCard';
 import { Textarea } from './ui/textarea';
+import { User } from '@prisma/client';
 
 interface CommentsProps {
   postSlug: string;
+}
+
+interface Comment {
+  id: string;
+  createdAt: Date;
+  desc: string;
+  userEmail: string;
+  postSlug: string;
+  user: User;
 }
 
 const fetcher = async (url: string) => {
