@@ -8,7 +8,7 @@ export const GET = async () => {
     return new NextResponse(JSON.stringify(categories));
   } catch (error) {
     return new NextResponse(
-      JSON.stringify({ message: 'Something went wrong' })
+      JSON.stringify({ message: 'Failed to fetch categories' })
     );
   }
 };
