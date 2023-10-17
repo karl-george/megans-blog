@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { Post } from '@prisma/client';
 import { formatDateString } from '@/utils/formatDateString';
 
+export const revalidate = 0;
+
 interface BlogCardProps {
   post: Post;
 }
@@ -15,7 +17,7 @@ function BlogCard({ post }: BlogCardProps) {
         <div>
           {post.img && (
             <Image
-              src={post.img}
+              src={`${post.img}_thumb.jpg`}
               alt='blog poster'
               width={400}
               height={550}
